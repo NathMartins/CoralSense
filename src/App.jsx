@@ -1,16 +1,20 @@
+import React from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Research from './pages/Research';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-:root {
-    --azul-marinho: #00334e;
-    --azul-ceu: #4ba3c7;
-    --azul-claro: #e0f7ff;
-    --branco: #ffffff;
-    --laranja: #fca311;
-  }
-  
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--azul-claro);
-    color: var(--azul-marinho);
-  }
-  
+function App() {
+  return (
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/pesquisa" element={<Research />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
+}
+export default App;
